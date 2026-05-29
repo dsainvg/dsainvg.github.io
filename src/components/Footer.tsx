@@ -50,6 +50,14 @@ const Footer: React.FC = () => {
         }}
       />
 
+      <style>{`
+        .footer-name {
+          background-image: linear-gradient(135deg, #6366f1, #8b5cf6);
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      `}</style>
       <div
         style={{
           maxWidth: '800px',
@@ -72,10 +80,8 @@ const Footer: React.FC = () => {
         >
           Designed &amp; Built by{' '}
           <span
+            className="footer-name"
             style={{
-              backgroundImage: 'linear-gradient(135deg, #6366f1, #8b5cf6)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
               fontWeight: 600,
             }}
           >

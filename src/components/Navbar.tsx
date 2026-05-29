@@ -120,10 +120,6 @@ export default function Navbar() {
     fontSize: '1.5rem',
     fontWeight: 800,
     letterSpacing: '-0.03em',
-    backgroundImage: `linear-gradient(135deg, ${COLORS.accent}, ${COLORS.accentHover}, #c084fc)`,
-    WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
-    backgroundClip: 'text',
     cursor: 'pointer',
     userSelect: 'none',
     textDecoration: 'none',
@@ -270,6 +266,12 @@ export default function Navbar() {
       .navbar-desktop-links { display: none !important; }
       .navbar-hamburger { display: flex !important; }
     }
+    .navbar-logo {
+      background-image: linear-gradient(135deg, ${COLORS.accent}, ${COLORS.accentHover}, #c084fc);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
   `;
 
   return (
@@ -281,6 +283,7 @@ export default function Navbar() {
         <a
           href="#home"
           onClick={(e) => handleClick(e, '#home')}
+          className="navbar-logo"
           style={logoStyle}
           aria-label="Go to top"
         >

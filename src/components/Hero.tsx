@@ -279,6 +279,17 @@ const Hero: React.FC = () => {
           marginLeft: 'clamp(1rem, 8vw, 10rem)',
         }}
       >
+        <style>{`
+          .hero-name {
+            background-image: linear-gradient(135deg, #6366f1 0%, #8b5cf6 40%, #a78bfa 70%, #6366f1 100%);
+            background-size: 200% 200%;
+            animation: heroGradientShift 6s ease infinite;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+          }
+        `}</style>
         {/* Greeting */}
         <p
           style={{
@@ -296,19 +307,13 @@ const Hero: React.FC = () => {
 
         {/* Name */}
         <h1
+          className="hero-name"
           style={{
             ...fadeUp(0.25),
             fontSize: 'clamp(2.8rem, 6vw, 5rem)',
             fontWeight: 800,
             lineHeight: 1.1,
             marginBottom: 16,
-            backgroundImage: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 40%, #a78bfa 70%, #6366f1 100%)',
-            backgroundSize: '200% 200%',
-            animation: 'heroGradientShift 6s ease infinite',
-            WebkitBackgroundClip: 'text',
-            backgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            color: 'transparent',
           }}
         >
           Durga Sai

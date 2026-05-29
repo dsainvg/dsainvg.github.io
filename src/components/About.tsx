@@ -73,7 +73,7 @@ const STATS: { end: number; suffix: string; label: string }[] = [
 ];
 
 const BIO =
-  'A passionate contributor at KodeinKGP, IIT Kharagpur, focusing on AI and Web3.0 initiatives within the Metaverse Team. Actively pursuing a Bachelor of Technology in Computer Science, with a strong foundation in machine learning, web development, and Python programming. Also an associate member of the Space Technology Students\' Society, contributing to tech-driven projects. Known for collaborative problem-solving and a keen interest in leveraging cutting-edge technologies to create impactful solutions.';
+  "I am actively working on Machine Learning research and focusing on building deep neural networks. As a sophomore at IIT Kharagpur, I dedicate my time to designing, training, and optimizing complex neural architectures to solve real-world problems and push the boundaries of artificial intelligence.";
 
 /* ─── sub-components ─── */
 function StatCard({
@@ -115,12 +115,10 @@ function StatCard({
       }}
     >
       <span
+        className="about-stat-number"
         style={{
           fontSize: 40,
           fontWeight: 800,
-          backgroundImage: `linear-gradient(135deg, ${ACCENT}, ${ACCENT_ALT})`,
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
           display: 'block',
           lineHeight: 1.2,
         }}
@@ -240,6 +238,14 @@ export default function About() {
         minHeight: '100vh',
       }}
     >
+      <style>{`
+        .about-stat-number {
+          background-image: linear-gradient(135deg, ${ACCENT}, ${ACCENT_ALT});
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      `}</style>
       {/* ── ambient glow ── */}
       <div
         style={{

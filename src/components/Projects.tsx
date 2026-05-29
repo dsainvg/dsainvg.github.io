@@ -119,6 +119,17 @@ export default function Projects() {
         position: 'relative',
       }}
     >
+      <style>{`
+        .project-title {
+          background-image: linear-gradient(135deg, #f8fafc, #f8fafc);
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+        .project-card:hover .project-title {
+          background-image: linear-gradient(135deg, #f8fafc, #a78bfa) !important;
+        }
+      `}</style>
       {/* Section Header */}
       <div
         style={{
@@ -179,6 +190,7 @@ export default function Projects() {
           return (
             <div
               key={index}
+              className="project-card"
               ref={(el) => {
                 cardRefs.current[index] = el;
               }}
@@ -244,19 +256,13 @@ export default function Projects() {
 
               {/* Project Title */}
               <h3
+                className="project-title"
                 style={{
                   fontSize: '1.35rem',
                   fontWeight: 700,
                   margin: '0 0 14px 0',
                   letterSpacing: '-0.02em',
                   lineHeight: 1.3,
-                  backgroundImage: isHovered
-                    ? 'linear-gradient(135deg, #f8fafc, #a78bfa)'
-                    : 'linear-gradient(135deg, #f8fafc, #f8fafc)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                  transition: 'background 0.3s ease',
                 }}
               >
                 {project.title}
