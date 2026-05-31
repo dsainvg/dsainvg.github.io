@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="This domain belongs to Durgasai Gundubogula. Visit his official website at dsainvg.me to learn more.">
-  <meta name="author" content="Durgasai Gundubogula">
+  <meta name="description" content="This domain belongs to Durga sai Gundubogula. Visit his official website at dsainvg.me to learn more.">
+  <meta name="author" content="Durga sai Gundubogula">
   <meta name="robots" content="index, follow">
-  <title>Durgasai Gundubogula</title>
-  
+  <title>Durga sai Gundubogula</title>
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,16 +15,19 @@
 
   <style>
     :root {
-      --bg-color: #0b0b0f;
-      --card-bg: rgba(18, 18, 26, 0.45);
-      --card-border: rgba(255, 255, 255, 0.07);
-      --text-primary: #f3f4f6;
-      --text-secondary: #9ca3af;
-      --accent-color: #8b5cf6; /* Violet */
-      --accent-glow: rgba(139, 92, 246, 0.35);
-      --accent-gradient: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 50%, #6366f1 100%);
-      --glow-1: rgba(139, 92, 246, 0.15);
-      --glow-2: rgba(99, 102, 241, 0.15);
+      --bg-color: #080b14;
+      --card-bg: rgba(12, 16, 28, 0.55);
+      --card-border: rgba(255, 160, 60, 0.12);
+      --text-primary: #f0ede8;
+      --text-secondary: #9a9083;
+      --accent-color: #f97316;             /* Warm orange */
+      --accent-amber: #fb923c;
+      --accent-gold: #fbbf24;
+      --accent-glow: rgba(249, 115, 22, 0.4);
+      --accent-gradient: linear-gradient(135deg, #fbbf24 0%, #f97316 55%, #ea580c 100%);
+      --glow-1: rgba(249, 115, 22, 0.12);  /* Orange ember */
+      --glow-2: rgba(251, 146, 60, 0.10);  /* Amber */
+      --glow-mid: rgba(234, 88, 12, 0.07); /* Deep ember center */
     }
 
     * {
@@ -45,13 +48,31 @@
       position: relative;
     }
 
-    /* Ambient Background Glows */
+    /* ── Starfield ── */
+    .stars {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .stars span {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 200, 120, 0.55);
+      animation: twinkle var(--d, 4s) infinite alternate ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%   { opacity: 0.15; transform: scale(0.8); }
+      100% { opacity: 0.9;  transform: scale(1.3); }
+    }
+
+    /* ── Ambient Glow Blobs ── */
     .glow-container {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      inset: 0;
       z-index: 0;
       overflow: hidden;
       pointer-events: none;
@@ -60,78 +81,68 @@
     .glow-blob {
       position: absolute;
       border-radius: 50%;
-      filter: blur(120px);
-      opacity: 0.8;
-      animation: float 20s infinite alternate ease-in-out;
+      filter: blur(130px);
+      opacity: 0.85;
+      animation: float 22s infinite alternate ease-in-out;
     }
 
     .glow-blob-1 {
-      top: -10%;
-      left: -10%;
-      width: 50vw;
-      height: 50vw;
+      top: -15%;
+      left: -15%;
+      width: 55vw;
+      height: 55vw;
       background: var(--glow-1);
     }
 
     .glow-blob-2 {
-      bottom: -10%;
-      right: -10%;
-      width: 50vw;
-      height: 50vw;
+      bottom: -15%;
+      right: -15%;
+      width: 55vw;
+      height: 55vw;
       background: var(--glow-2);
-      animation-delay: -5s;
+      animation-delay: -7s;
     }
 
     .glow-blob-3 {
-      top: 40%;
+      top: 45%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 35vw;
-      height: 35vw;
-      background: rgba(167, 139, 250, 0.08);
-      animation: pulse 12s infinite alternate ease-in-out;
+      width: 40vw;
+      height: 40vw;
+      background: var(--glow-mid);
+      animation: pulse 14s infinite alternate ease-in-out;
     }
 
     @keyframes float {
-      0% {
-        transform: translate(0, 0) scale(1);
-      }
-      50% {
-        transform: translate(5%, 10%) scale(1.1);
-      }
-      100% {
-        transform: translate(-5%, -5%) scale(0.9);
-      }
+      0%   { transform: translate(0, 0) scale(1); }
+      50%  { transform: translate(5%, 10%) scale(1.1); }
+      100% { transform: translate(-5%, -5%) scale(0.9); }
     }
 
     @keyframes pulse {
-      0% {
-        transform: translate(-50%, -50%) scale(0.95);
-        opacity: 0.5;
-      }
-      100% {
-        transform: translate(-50%, -50%) scale(1.05);
-        opacity: 0.9;
-      }
+      0%   { transform: translate(-50%, -50%) scale(0.92); opacity: 0.4; }
+      100% { transform: translate(-50%, -50%) scale(1.08); opacity: 1;   }
     }
 
-    /* Card Container */
+    /* ── Card ── */
     .card {
       background: var(--card-bg);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
       border: 1px solid var(--card-border);
-      border-radius: 24px;
+      border-radius: 28px;
       padding: 3.5rem 3rem;
       width: 90%;
       max-width: 540px;
       text-align: center;
       z-index: 10;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3),
-                  inset 0 1px 0 rgba(255, 255, 255, 0.1);
-      transform: translateY(20px);
+      box-shadow:
+        0 0 0 1px rgba(249, 115, 22, 0.06),
+        0 20px 60px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.07);
+      transform: translateY(24px);
       opacity: 0;
-      animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      animation: fadeInUp 1.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
     @keyframes fadeInUp {
@@ -141,7 +152,7 @@
       }
     }
 
-    /* Owner Avatar / Icon */
+    /* ── Avatar ── */
     .avatar-wrapper {
       position: relative;
       width: 96px;
@@ -151,90 +162,97 @@
 
     .avatar-glow {
       position: absolute;
-      top: -4px;
-      left: -4px;
-      right: -4px;
-      bottom: -4px;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
       background: var(--accent-gradient);
       border-radius: 50%;
       z-index: 1;
-      opacity: 0.75;
-      filter: blur(8px);
-      animation: rotateGlow 8s linear infinite;
+      opacity: 0.7;
+      filter: blur(10px);
+      animation: rotateGlow 9s linear infinite;
     }
 
     .avatar {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #1e1b29;
+      inset: 0;
+      background: #0e1221;
       border-radius: 50%;
       z-index: 2;
       display: flex;
       justify-content: center;
       align-items: center;
-      border: 2px solid rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(249, 115, 22, 0.18);
     }
 
     .avatar svg {
       width: 42px;
       height: 42px;
       fill: none;
-      stroke: #a78bfa;
+      stroke: var(--accent-amber);
       stroke-width: 1.5;
       stroke-linecap: round;
       stroke-linejoin: round;
     }
 
     @keyframes rotateGlow {
-      100% {
-        transform: rotate(360deg);
-      }
+      100% { transform: rotate(360deg); }
     }
 
-    /* Headings & Text */
+    /* ── Headings & Text ── */
     h1 {
       font-family: 'Outfit', sans-serif;
       font-size: 2.25rem;
       font-weight: 800;
       letter-spacing: -0.03em;
       margin-bottom: 0.75rem;
-      background: linear-gradient(180deg, #ffffff 0%, #c7d2fe 100%);
+      white-space: nowrap;
+      background: linear-gradient(170deg, #ffe8cc 0%, #fb923c 60%, #ea580c 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .subtitle {
       font-size: 0.95rem;
       color: var(--text-secondary);
       font-weight: 400;
-      line-height: 1.6;
+      line-height: 1.7;
       margin-bottom: 2.5rem;
     }
 
     .highlight {
-      color: #c084fc;
-      font-weight: 500;
+      color: var(--accent-amber);
+      font-weight: 600;
     }
 
-    /* Elegant Link Button */
+    /* ── Divider ── */
+    .divider {
+      width: 48px;
+      height: 2px;
+      background: var(--accent-gradient);
+      border-radius: 2px;
+      margin: 0 auto 2rem;
+      opacity: 0.7;
+    }
+
+    /* ── Button ── */
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 0.75rem;
       background: var(--accent-gradient);
-      color: #ffffff;
+      color: #fff;
       text-decoration: none;
       font-family: 'Outfit', sans-serif;
       font-size: 1.05rem;
       font-weight: 600;
-      padding: 1rem 2rem;
+      padding: 1rem 2.1rem;
       border-radius: 14px;
       transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-      box-shadow: 0 10px 25px -5px var(--accent-glow);
+      box-shadow: 0 10px 28px -5px var(--accent-glow);
       position: relative;
       overflow: hidden;
     }
@@ -246,19 +264,15 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.2),
-        transparent
-      );
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent);
       transition: 0.5s;
     }
 
     .btn:hover {
       transform: translateY(-4px);
-      box-shadow: 0 15px 30px -5px rgba(139, 92, 246, 0.5),
-                  0 0 20px 2px rgba(139, 92, 246, 0.2);
+      box-shadow:
+        0 16px 35px -5px rgba(249, 115, 22, 0.55),
+        0 0 22px 3px rgba(249, 115, 22, 0.2);
     }
 
     .btn:hover::before {
@@ -276,19 +290,19 @@
     }
 
     .btn:hover svg {
-      transform: translateX(4px);
+      transform: translateX(5px);
     }
 
-    /* Small Footer Info */
+    /* ── Footer Note ── */
     .footer-note {
       margin-top: 2.5rem;
-      font-size: 0.75rem;
-      color: rgba(255, 255, 255, 0.2);
-      letter-spacing: 0.05em;
+      font-size: 0.72rem;
+      color: rgba(255, 200, 120, 0.2);
+      letter-spacing: 0.1em;
       text-transform: uppercase;
     }
 
-    /* Media Queries */
+    /* ── Responsive ── */
     @media (max-width: 600px) {
       .card {
         padding: 2.5rem 1.75rem;
@@ -304,7 +318,10 @@
 </head>
 <body>
 
-  <!-- Background Blur Elements -->
+  <!-- Starfield -->
+  <div class="stars" id="stars-bg" aria-hidden="true"></div>
+
+  <!-- Ambient Glow Blobs -->
   <div class="glow-container">
     <div class="glow-blob glow-blob-1"></div>
     <div class="glow-blob glow-blob-2"></div>
@@ -316,7 +333,7 @@
     <div class="avatar-wrapper">
       <div class="avatar-glow"></div>
       <div class="avatar">
-        <!-- Modern Globe/Domain SVG Icon -->
+        <!-- Globe / Domain Icon -->
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <circle cx="12" cy="12" r="10"></circle>
           <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
@@ -325,10 +342,12 @@
       </div>
     </div>
 
-    <h1>Durgasai Gundubogula</h1>
-    
+    <h1>Durga sai Gundubogula</h1>
+
+    <div class="divider"></div>
+
     <p class="subtitle">
-      This domain belongs to <span class="highlight">Durgasai Gundubogula</span>. It is no longer host to this website, but you are welcome to visit his official homepage at the link below.
+      This domain belongs to <span class="highlight">Durga sai Gundubogula</span>. you are welcome to visit my official homepage at the link below.
     </p>
 
     <a href="https://dsainvg.me" class="btn" id="visit-website-btn" rel="noopener noreferrer">
@@ -340,6 +359,27 @@
 
     <div class="footer-note">Domain Redirect</div>
   </main>
+
+  <script>
+    // Generate subtle star particles in the background
+    (function () {
+      const container = document.getElementById('stars-bg');
+      const count = 80;
+      for (let i = 0; i < count; i++) {
+        const s = document.createElement('span');
+        const size = Math.random() * 2.2 + 0.8;
+        s.style.cssText = [
+          `width:${size}px`,
+          `height:${size}px`,
+          `top:${Math.random() * 100}%`,
+          `left:${Math.random() * 100}%`,
+          `--d:${(Math.random() * 5 + 2).toFixed(1)}s`,
+          `animation-delay:${(Math.random() * 6).toFixed(1)}s`,
+        ].join(';');
+        container.appendChild(s);
+      }
+    })();
+  </script>
 
 </body>
 </html>
