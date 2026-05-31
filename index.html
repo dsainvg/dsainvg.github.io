@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="This domain belongs to Durgasai Gundubogula. Visit his official website at dsainvg.me to learn more.">
+  <meta name="author" content="Durgasai Gundubogula">
+  <meta name="robots" content="index, follow">
+  <title>Durgasai Gundubogula</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-color: #0b0b0f;
+      --card-bg: rgba(18, 18, 26, 0.45);
+      --card-border: rgba(255, 255, 255, 0.07);
+      --text-primary: #f3f4f6;
+      --text-secondary: #9ca3af;
+      --accent-color: #8b5cf6; /* Violet */
+      --accent-glow: rgba(139, 92, 246, 0.35);
+      --accent-gradient: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 50%, #6366f1 100%);
+      --glow-1: rgba(139, 92, 246, 0.15);
+      --glow-2: rgba(99, 102, 241, 0.15);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-primary);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Ambient Background Glows */
+    .glow-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .glow-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.8;
+      animation: float 20s infinite alternate ease-in-out;
+    }
+
+    .glow-blob-1 {
+      top: -10%;
+      left: -10%;
+      width: 50vw;
+      height: 50vw;
+      background: var(--glow-1);
+    }
+
+    .glow-blob-2 {
+      bottom: -10%;
+      right: -10%;
+      width: 50vw;
+      height: 50vw;
+      background: var(--glow-2);
+      animation-delay: -5s;
+    }
+
+    .glow-blob-3 {
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 35vw;
+      height: 35vw;
+      background: rgba(167, 139, 250, 0.08);
+      animation: pulse 12s infinite alternate ease-in-out;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translate(0, 0) scale(1);
+      }
+      50% {
+        transform: translate(5%, 10%) scale(1.1);
+      }
+      100% {
+        transform: translate(-5%, -5%) scale(0.9);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: translate(-50%, -50%) scale(0.95);
+        opacity: 0.5;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1.05);
+        opacity: 0.9;
+      }
+    }
+
+    /* Card Container */
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 3.5rem 3rem;
+      width: 90%;
+      max-width: 540px;
+      text-align: center;
+      z-index: 10;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3),
+                  inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* Owner Avatar / Icon */
+    .avatar-wrapper {
+      position: relative;
+      width: 96px;
+      height: 96px;
+      margin: 0 auto 2rem;
+    }
+
+    .avatar-glow {
+      position: absolute;
+      top: -4px;
+      left: -4px;
+      right: -4px;
+      bottom: -4px;
+      background: var(--accent-gradient);
+      border-radius: 50%;
+      z-index: 1;
+      opacity: 0.75;
+      filter: blur(8px);
+      animation: rotateGlow 8s linear infinite;
+    }
+
+    .avatar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #1e1b29;
+      border-radius: 50%;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .avatar svg {
+      width: 42px;
+      height: 42px;
+      fill: none;
+      stroke: #a78bfa;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    @keyframes rotateGlow {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Headings & Text */
+    h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.25rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.75rem;
+      background: linear-gradient(180deg, #ffffff 0%, #c7d2fe 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      font-weight: 400;
+      line-height: 1.6;
+      margin-bottom: 2.5rem;
+    }
+
+    .highlight {
+      color: #c084fc;
+      font-weight: 500;
+    }
+
+    /* Elegant Link Button */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      background: var(--accent-gradient);
+      color: #ffffff;
+      text-decoration: none;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      padding: 1rem 2rem;
+      border-radius: 14px;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 10px 25px -5px var(--accent-glow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+      );
+      transition: 0.5s;
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 30px -5px rgba(139, 92, 246, 0.5),
+                  0 0 20px 2px rgba(139, 92, 246, 0.2);
+    }
+
+    .btn:hover::before {
+      left: 100%;
+    }
+
+    .btn:active {
+      transform: translateY(-1px);
+    }
+
+    .btn svg {
+      width: 18px;
+      height: 18px;
+      transition: transform 0.3s ease;
+    }
+
+    .btn:hover svg {
+      transform: translateX(4px);
+    }
+
+    /* Small Footer Info */
+    .footer-note {
+      margin-top: 2.5rem;
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.2);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* Media Queries */
+    @media (max-width: 600px) {
+      .card {
+        padding: 2.5rem 1.75rem;
+      }
+      h1 {
+        font-size: 1.85rem;
+      }
+      .subtitle {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Blur Elements -->
+  <div class="glow-container">
+    <div class="glow-blob glow-blob-1"></div>
+    <div class="glow-blob glow-blob-2"></div>
+    <div class="glow-blob glow-blob-3"></div>
+  </div>
+
+  <!-- Central Card -->
+  <main class="card" id="main-card">
+    <div class="avatar-wrapper">
+      <div class="avatar-glow"></div>
+      <div class="avatar">
+        <!-- Modern Globe/Domain SVG Icon -->
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+          <path d="M2 12h20"></path>
+        </svg>
+      </div>
+    </div>
+
+    <h1>Durgasai Gundubogula</h1>
+    
+    <p class="subtitle">
+      This domain belongs to <span class="highlight">Durgasai Gundubogula</span>. It is no longer host to this website, but you are welcome to visit his official homepage at the link below.
+    </p>
+
+    <a href="https://dsainvg.me" class="btn" id="visit-website-btn" rel="noopener noreferrer">
+      Visit dsainvg.me
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+      </svg>
+    </a>
+
+    <div class="footer-note">Domain Redirect</div>
+  </main>
+
+</body>
+</html>
